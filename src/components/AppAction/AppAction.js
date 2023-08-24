@@ -10,8 +10,11 @@ export default function AppAction() {
     setInputValue(e.target.value);
   };
 
-  const clickChange = () => {
+  async function clickChange() {
     if (inputValue) {
+      const res = await fetch(`https://clck.ru/--?url=${inputValue}`)
+      const link = await res.text()
+      console.log(link)
       setIsActive(true);
     } else {
       setIsActive(false);
