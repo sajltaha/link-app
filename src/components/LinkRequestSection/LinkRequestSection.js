@@ -1,6 +1,10 @@
 import style from "./LinkRequestSection.module.css";
 
-export default function LinkRequestSection({setFinalLink, setInputValue, inputValue}) {
+export default function LinkRequestSection({
+  setFinalLink,
+  setInputValue,
+  inputValue,
+}) {
   async function getLink() {
     const res = await fetch(`https://clck.ru/--?url=${inputValue}`);
     const link = await res.text();
